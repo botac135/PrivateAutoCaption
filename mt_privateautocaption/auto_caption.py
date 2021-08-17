@@ -16,7 +16,7 @@ URL_LINK=Config.URL_LINK
 @Client.on_message(filters.media & filters.channel)
 async def caption(client, message: Message):
     kopp, _ = get_file_id(message)
-    await message.edit(f"<i><b>{kopp.file_name}</i></b>\n<i><b>{CAPTION_TEXT}</b></i>",
+    await message.edit(f"<code>{kopp.file_name}</code>\n<i><b>{CAPTION_TEXT}</b></i>",
           reply_markup=InlineKeyboardMarkup(
               [[
               InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
